@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+}
+
+group = 'guru.qa.homework.VR-3'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation (
+            "com.codeborne:selenide:6.19.1",
+            "org.junit.jupiter:junit-jupiter:5.9.3",
+            'org.slf4j:slf4j-simple:2.0.7',
+            'com.github.javafaker:javafaker:1.0.2',
+            'io.qameta.allure:allure-selenide:2.29.1'
+    )
+}
+
+test {
+    useJUnitPlatform()
+}
+
+tasks.register('property_test', Test) {
+    useJUnitPlatform {
+        includeTags("jenkinstest")
+    }
+}
