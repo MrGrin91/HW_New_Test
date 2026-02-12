@@ -14,7 +14,7 @@ public class MainPage {
     SelenideElement pcode = $("#postal-code");
     SelenideElement shouldhavecechcomccon = $("checkout_complete_container");
     SelenideElement logButton = $("#login-button");
-    SelenideElement addButton = $("#item_4_title_link");
+    SelenideElement addButton = $("#add-to-cart");
     SelenideElement containerButton = $("shopping_cart_container");
     SelenideElement continueSButton = $("continue-shopping");
     SelenideElement continueButton = $("continue");
