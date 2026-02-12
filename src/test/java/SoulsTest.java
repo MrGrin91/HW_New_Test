@@ -12,7 +12,7 @@ public class SoulsTest extends TestBase {
     @Test
     public void addOrderTest() {
         Allure.step("Открываем браузер", () -> {
-            open();
+            open("");
         });
 
         Allure.step("Авторизация", () -> {
