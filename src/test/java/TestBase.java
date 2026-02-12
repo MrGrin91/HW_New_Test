@@ -18,14 +18,13 @@ public class TestBase {
     @BeforeAll
     static void setupConfig() {
         Configuration.pageLoadStrategy = "eager";
-        Configuration.browserSize = "1200x900";
         Configuration.remote = System.getProperty("remote");
-        Configuration.browser = System.getProperty("browser", "crome");
+        Configuration.browser = System.getProperty("browser", "chrome");
         Configuration.browserVersion = System.getProperty("browserVersion","142.0");
-        Configuration.browserSize = System.getProperty("browserSize","1900x1080");
+        Configuration.browserSize = System.getProperty("browserSize","1920x1080");
         Configuration.baseUrl = "https://www.saucedemo.com/";
         Configuration.timeout = 30000;
-       // Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
                 "enableVNC", true,
