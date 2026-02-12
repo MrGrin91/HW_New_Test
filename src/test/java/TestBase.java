@@ -19,6 +19,10 @@ public class TestBase {
     static void setupConfig() {
         Configuration.pageLoadStrategy = "eager";
         Configuration.browserSize = "1200x900";
+        Configuration.remote = System.getProperty("remote");
+        Configuration.browser = System.getProperty("browser", "crome");
+        Configuration.browserVersion = System.getProperty("browserVersion","142.0");
+        Configuration.browserSize = System.getProperty("browserSize","1900x1080");
         Configuration.baseUrl = "https://www.saucedemo.com/";
         Configuration.timeout = 30000;
        // Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
