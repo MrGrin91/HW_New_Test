@@ -21,10 +21,12 @@ dependencies {
 
 test {
     useJUnitPlatform()
+    systemProperties(System.getProperties())
 }
 
 tasks.register('property_test', Test) {
     useJUnitPlatform {
         includeTags("jenkinstest")
     }
+
 }
