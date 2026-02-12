@@ -20,7 +20,7 @@ public class TestBase {
         Configuration.pageLoadStrategy = "eager";
         Configuration.remote = System.getProperty("remote");
         Configuration.browser = System.getProperty("browser", "chrome");
-        Configuration.browserVersion = System.getProperty("browserVersion","142.0");
+        Configuration.browserVersion = System.getProperty("browserVersion");
         Configuration.browserSize = System.getProperty("browserSize","1920x1080");
         Configuration.baseUrl = "https://www.saucedemo.com/";
         Configuration.timeout = 30000;
