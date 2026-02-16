@@ -1,13 +1,18 @@
 import io.qameta.allure.Allure;
 import org.junit.jupiter.api.Test;
-import pages.MainPage;
+import pages.*;
 
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.$;
 
 public class SoulsTest extends TestBase {
 
-    MainPage mainPage = new MainPage();
+    AutorizationPage autorizationPage = new AutorizationPage();
+    CheckoutPage checkoutPage = new CheckoutPage();
+    ProductPage productPage = new ProductPage();
+    EndPage endPage = new EndPage();
+    ItemPage itemPage = new ItemPage();
+    BinPage binPage = new BinPage();
 
     @Test
     public void addOrderTest() {
@@ -16,25 +21,27 @@ public class SoulsTest extends TestBase {
         });
 
         Allure.step("Авторизация", () -> {
-        mainPage.setUserName("standard_user");
-        mainPage.setPassword("secret_sauce");
+        autorizationPage.setUserName("standard_user");
+        autorizationPage.setPassword("secret_sauce");
+        autorizationPage.logButtonClick();
         });
 
-        mainPage.logButtonClick();
-        $("#item_4_title_link").click();
-        mainPage.addButtonClick();
-        mainPage.containerButtonClick();
-        mainPage.continueSButtonClick();
+        productPage.item4ButtonClick();
+
+        itemPage.addButtonClick();
+        itemPage.containerButtonClick();
+
+        binPage.chekoutButtonClick();
 
         Allure.step("Заполнение личных данных", () -> {
-        mainPage.setName("Vadim");
-        mainPage.setLName("Ruch");
-        mainPage.setCode("1234");
+        checkoutPage.setName("Vadim");
+        checkoutPage.setLName("Ruch");
+        checkoutPage.setCode("1234");
+        checkoutPage.continueButtonClick();
         });
 
-        mainPage.continueButtonClick();
-        mainPage.finishButtonClick();
-        mainPage.checkcechcomccon("Thank you for your order!");
+        endPage.finishButtonClick();
+        endPage.checkcechcomccon("Thank you for your order!");
 
     }
 
