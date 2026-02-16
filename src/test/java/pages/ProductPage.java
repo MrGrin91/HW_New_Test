@@ -1,18 +1,16 @@
 package pages;
 
-import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.ElementsCollection;
 import io.qameta.allure.Step;
+import static com.codeborne.selenide.Selenide.$$;
 
-import static com.codeborne.selenide.Selenide.$;
+public class ProductPage {
+            ElementsCollection inventoryItems = $$("[data-test=inventory-item]");
 
-    public class ProductPage {
-        SelenideElement item4Button = $("#item_4_title_link");
-
-
-        @Step("Клик по товару 4")
-        public ProductPage item4ButtonClick() {
-            item4Button.click();
+            @Step("Добавить товар в корзину по индексу")
+            public ProductPage addItemToBasket(int index) {
+            inventoryItems.get(index).$("button").click();
 
             return this;
-        }
     }
+}

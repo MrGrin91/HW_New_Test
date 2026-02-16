@@ -31,7 +31,6 @@ public class TestBase {
                 "enableVideo", true
         ));
         Configuration.browserCapabilities = capabilities;
-        ChromeOptions options = new ChromeOptions();
 
     }
 
