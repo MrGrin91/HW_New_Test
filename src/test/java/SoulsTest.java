@@ -28,7 +28,7 @@ public class SoulsTest extends TestBase {
 
         productPage.addItemToBasket(0);;
 
-        itemPage.addButtonClick();
+        // itemPage.addButtonClick();
         itemPage.containerButtonClick();
 
         binPage.chekoutButtonClick();

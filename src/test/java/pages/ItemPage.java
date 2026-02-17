@@ -7,7 +7,7 @@ import static com.codeborne.selenide.Selenide.$;
 
     public class ItemPage {
         SelenideElement addButton = $("#add-to-cart");
-        SelenideElement containerButton = $("shopping_cart_container");
+        SelenideElement containerButton = $("#shopping_cart_container");
 
 
         @Step("Клик по добавить в корзину")
