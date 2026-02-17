@@ -8,8 +8,8 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class EndPage {
 
-    SelenideElement finishButton = $("finish");
-    SelenideElement shouldhavecechcomccon = $("checkout_complete_container");
+    SelenideElement finishButton = $("#finish");
+    SelenideElement shouldhavecechcomccon = $("#checkout_complete_container");
 
     @Step("Клик по кнопке завершить")
     public EndPage finishButtonClick() {

@@ -10,7 +10,7 @@ public class CheckoutPage {
     SelenideElement fname = $("#first-name");
     SelenideElement lname = $("#last-name");
     SelenideElement pcode = $("#postal-code");
-    SelenideElement continueButton = $("continue");
+    SelenideElement continueButton = $("#continue");
 
     @Step("Установка значения имени")
     public CheckoutPage setName(String userNameValue) {
