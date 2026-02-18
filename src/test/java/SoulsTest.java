@@ -3,7 +3,6 @@ import org.junit.jupiter.api.Test;
 import pages.*;
 
 import static com.codeborne.selenide.Selenide.*;
-import static com.codeborne.selenide.Selenide.$;
 
 public class SoulsTest extends TestBase {
 
@@ -28,7 +27,6 @@ public class SoulsTest extends TestBase {
 
         productPage.addItemToBasket(0);;
 
-        // itemPage.addButtonClick();
         itemPage.containerButtonClick();
 
         binPage.chekoutButtonClick();
@@ -44,6 +42,4 @@ public class SoulsTest extends TestBase {
         endPage.checkcechcomccon("Thank you for your order!");
 
     }
-
-
 }
