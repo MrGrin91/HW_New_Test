@@ -1,9 +1,24 @@
 plugins {
-    id 'java'
+    id 'java-library'
+    id 'io.qameta.allure' version '2.11.2'
 }
 
 group = 'guru.qa.homework.VR-3'
 version = '1.0-SNAPSHOT'
+
+allure {
+    report {
+        version.set("2.19.0")
+    }
+    adapter {
+        aspectjWeaver.set(true)
+        frameworks {
+            junit5 {
+                adapterVersion.set("2.19.0")
+            }
+        }
+    }
+}
 
 repositories {
     mavenCentral()
@@ -20,14 +35,22 @@ dependencies {
     )
 }
 
-test {
+tasks.withType(Test) {
     useJUnitPlatform()
     systemProperties(System.getProperties())
-}
 
-tasks.register('property_test', Test) {
-    useJUnitPlatform {
-        includeTags("jenkinstest")
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
     }
 
+    testLogging {
+        lifecycle {
+            events "started", "skipped", "failed", "standard_error", "standard_out"
+            exceptionFormat "short"
+        }
+    }
+}
+
+test {
+    useJUnitPlatform()
 }
